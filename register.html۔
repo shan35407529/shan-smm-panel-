@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shan Ali SMM - Register</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .register-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+        h2 { color: #333; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #218838; }
+        a { text-decoration: none; color: #007bff; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<div class="register-card">
+    <h2>Shan Ali SMM</h2>
+    <p>نیا اکاؤنٹ بنائیں</p>
+    <input type="text" placeholder="پورا نام (Full Name)">
+    <input type="email" placeholder="ای میل (Email)">
+    <input type="password" placeholder="پاس ورڈ (Password)">
+    <button>رجسٹر کریں</button>
+    <br><br>
+    <a href="login.html">پہلے سے اکاؤنٹ ہے؟ لاگ ان کریں</a>
+</div>
+
+</body>
+</html>
