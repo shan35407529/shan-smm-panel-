@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shan Ali SMM - Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f1f5f9; }
+        .sidebar { width: 200px; background: #1e293b; color: white; height: 100vh; position: fixed; padding: 20px; }
+        .main-content { margin-left: 240px; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .nav-item { display: block; color: white; text-decoration: none; padding: 10px 0; border-bottom: 1px solid #334155; }
+        .nav-item:hover { color: #38bdf8; }
+        h2 { color: #1e293b; }
+        select, input, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #cbd5e1; }
+        button { background-color: #38bdf8; color: white; border: none; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Shan Ali SMM</h3>
+    <a href="dashboard.html" class="nav-item">🏠 ڈیش بورڈ</a>
+    <a href="orders.html" class="nav-item">📦 میرے آرڈرز</a>
+    <a href="add-funds.html" class="nav-item">💰 فنڈز جمع کریں</a>
+    <a href="login.html" class="nav-item" style="color: #f87171;">🚪 لاگ آؤٹ</a>
+</div>
+
+<div class="main-content">
+    <h2>خوش آمدید، شان علی!</h2>
+    
+    <div class="card">
+        <h3>نیا آرڈر لگائیں</h3>
+        <label>کیٹیگری منتخب کریں:</label>
+        <select>
+            <option>Instagram Followers</option>
+            <option>TikTok Likes</option>
+            <option>YouTube Views</option>
+        </select>
+        
+        <label>سروس:</label>
+        <select>
+            <option>Real Followers - $2.00 per 1000</option>
+        </select>
+        
+        <input type="text" placeholder="لنک یہاں ڈالیں (Link)">
+        <input type="number" placeholder="تعداد (Quantity)">
+        <button>آرڈر کنفرم کریں</button>
+    </div>
+</div>
+
+</body>
+</html>
