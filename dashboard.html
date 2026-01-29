@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shan Ali SMM - Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f1f5f9; display: flex; }
+        .sidebar { width: 220px; background: #1e293b; color: white; height: 100vh; position: fixed; padding: 20px; text-align: right; }
+        .main-content { margin-left: 240px; padding: 20px; width: 100%; text-align: right; }
+        .nav-item { display: block; color: white; text-decoration: none; padding: 12px; border-bottom: 1px solid #334155; }
+        .nav-item:hover { background: #334155; color: #38bdf8; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 20px; }
+        select, input, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #cbd5e1; border-radius: 5px; box-sizing: border-box; text-align: right; }
+        button { background-color: #38bdf8; color: white; border: none; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>شان علی SMM</h3>
+    <a href="dashboard.html" class="nav-item">🏠 ڈیش بورڈ</a>
+    <a href="orders.html" class="nav-item">📦 میرے آرڈرز</a>
+    <a href="add-funds.html" class="nav-item">💰 فنڈز جمع کریں</a>
+    <a href="login.html" class="nav-item" style="color: #f87171; margin-top: 20px;">🚪 لاگ آؤٹ</a>
+</div>
+
+<div class="main-content">
+    <h2>خوش آمدید، شان علی بھائی!</h2>
+    <div class="card">
+        <h3>نیا آرڈر لگائیں</h3>
+        
+        <label>سروس منتخب کریں:</label>
+        <select>
+            <option>Instagram Followers - [Rs. 200]</option>
+            <option>TikTok Likes - [Rs. 100]</option>
+            <option>YouTube Views - [Rs. 500]</option>
+        </select>
+
+        <label>لنک (Link):</label>
+        <input type="text" placeholder="سوشل میڈیا لنک یہاں ڈالیں">
+
+        <label>تعداد (Quantity):</label>
+        <input type="number" placeholder="مثال: 1000">
+
+        <button>آرڈر مکمل کریں</button>
+    </div>
+</div>
+
+</body>
+</html>
