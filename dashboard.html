@@ -3,49 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shan Ali SMM - Dashboard</title>
+    <title>Dashboard - Shan Ali SMM</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f1f5f9; display: flex; }
-        .sidebar { width: 220px; background: #1e293b; color: white; height: 100vh; position: fixed; padding: 20px; text-align: right; }
-        .main-content { margin-left: 240px; padding: 20px; width: 100%; text-align: right; }
-        .nav-item { display: block; color: white; text-decoration: none; padding: 12px; border-bottom: 1px solid #334155; }
-        .nav-item:hover { background: #334155; color: #38bdf8; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 20px; }
-        select, input, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #cbd5e1; border-radius: 5px; box-sizing: border-box; text-align: right; }
-        button { background-color: #38bdf8; color: white; border: none; font-weight: bold; cursor: pointer; }
+        body { font-family: Arial; background: #0f172a; color: white; margin: 0; padding: 15px; }
+        .header { background: #1e293b; padding: 20px; border-radius: 10px; text-align: center; border-bottom: 3px solid #3b82f6; }
+        .balance-box { background: #3b82f6; padding: 15px; border-radius: 10px; margin-top: 15px; font-weight: bold; }
+        .order-form { background: #1e293b; padding: 20px; border-radius: 10px; margin-top: 20px; }
+        select, input, button { width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px; border: none; box-sizing: border-box; }
+        button { background: #10b981; color: white; font-weight: bold; cursor: pointer; font-size: 16px; }
+        .nav-links { display: flex; justify-content: space-around; margin-top: 20px; background: #1e293b; padding: 10px; border-radius: 10px; }
+        .nav-links a { color: #3b82f6; text-decoration: none; font-size: 14px; }
     </style>
 </head>
 <body>
 
-<div class="sidebar">
-    <h3>شان علی SMM</h3>
-    <a href="dashboard.html" class="nav-item">🏠 ڈیش بورڈ</a>
-    <a href="orders.html" class="nav-item">📦 میرے آرڈرز</a>
-    <a href="add-funds.html" class="nav-item">💰 فنڈز جمع کریں</a>
-    <a href="login.html" class="nav-item" style="color: #f87171; margin-top: 20px;">🚪 لاگ آؤٹ</a>
-</div>
+    <div class="header">
+        <h2>Shan Ali SMM Panel 🚀</h2>
+        <p>خوش آمدید، اپنا آرڈر لگائیں</p>
+    </div>
 
-<div class="main-content">
-    <h2>خوش آمدید، شان علی بھائی!</h2>
-    <div class="card">
-        <h3>نیا آرڈر لگائیں</h3>
+    <div class="balance-box">
+        میرا بیلنس: Rs. 0.00
+    </div>
+
+    <div class="order-form">
+        <h3>نیا آرڈر (New Order)</h3>
         
         <label>سروس منتخب کریں:</label>
         <select>
-            <option>Instagram Followers - [Rs. 200]</option>
-            <option>TikTok Likes - [Rs. 100]</option>
-            <option>YouTube Views - [Rs. 500]</option>
+            <option>Instagram Followers - Rs. 150/1k</option>
+            <option>TikTok Likes - Rs. 100/1k</option>
+            <option>YouTube Watchtime - Rs. 2000/1k</option>
+            <option>Facebook Page Likes - Rs. 300/1k</option>
         </select>
 
         <label>لنک (Link):</label>
-        <input type="text" placeholder="سوشل میڈیا لنک یہاں ڈالیں">
+        <input type="text" placeholder="https://www.instagram.com/profile">
 
-        <label>تعداد (Quantity):</label>
-        <input type="number" placeholder="مثال: 1000">
+        <label>مقدار (Quantity):</label>
+        <input type="number" placeholder="مثلاً 1000">
 
-        <button>آرڈر مکمل کریں</button>
+        <button onclick="alert('آرڈر موصول ہو گیا ہے! ایڈمن جلد پروسیس کرے گا۔')">آرڈر لگائیں (Place Order)</button>
     </div>
-</div>
+
+    <div class="nav-links">
+        <a href="add-funds.html">پیسے جمع کریں 💰</a>
+        <a href="orders.html">میرے آرڈرز 📦</a>
+        <a href="index.html" style="color: #ef4444;">لاگ آؤٹ 🚪</a>
+    </div>
 
 </body>
 </html>
