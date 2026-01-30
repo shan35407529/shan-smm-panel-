@@ -1,0 +1,15 @@
+{
+  "name": "Shan Ali SMM Panel",
+  "short_name": "ShanSMM",
+  "start_url": "login.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
