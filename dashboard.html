@@ -5,71 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Shan Ali SMM</title>
     <style>
-        body { font-family: Arial; background: #0f172a; color: white; text-align: center; margin: 0; padding: 20px; }
-        .header { background: #1e293b; padding: 20px; border-radius: 15px; border-bottom: 4px solid #3b82f6; margin-bottom: 20px; }
-        .balance-card { background: linear-gradient(135deg, #3b82f6, #1d4ed8); padding: 20px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        .order-box { background: #1e293b; padding: 20px; border-radius: 15px; border: 1px solid #334155; text-align: right; }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; background: #0f172a; color: white; box-sizing: border-box; border: 1px solid #3b82f6; }
-        .btn-order { width: 100%; padding: 15px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; }
-        .admin-badge { background: #f59e0b; color: black; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; }
+        body { font-family: Arial; background: #0f172a; color: white; text-align: center; margin: 0; }
+        
+        /* ویلکم پاپ اپ کا ڈیزائن */
+        .welcome-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); display: flex; align-items: center;
+            justify-content: center; z-index: 1000;
+        }
+        .welcome-card {
+            background: #1e293b; padding: 30px; border-radius: 20px;
+            border: 2px solid #3b82f6; width: 80%; max-width: 350px;
+            box-shadow: 0 0 20px #3b82f6;
+        }
+        .welcome-card h2 { color: #3b82f6; margin-bottom: 10px; }
+        .welcome-card p { font-size: 14px; line-height: 1.5; color: #cbd5e1; }
+        .close-btn {
+            background: #3b82f6; color: white; border: none; padding: 10px 25px;
+            border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 20px;
+        }
+
+        /* ڈیش بورڈ کا باقی حصہ */
+        .main-content { padding: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h2 id="welcome-text">خوش آمدید، شان علی! 🚀</h2>
-        <div id="admin-tag" style="display:none;"><span class="admin-badge">ADMIN MODE</span></div>
+    <div class="welcome-overlay" id="welcomeBox">
+        <div class="welcome-card">
+            <div style="font-size: 50px;">🚀</div>
+            <h2>خوش آمدید!</h2>
+            <p>شان علی SMM پینل میں خوش آمدید۔ یہاں آپ کو سب سے سستی اور تیز ترین سوشل میڈیا سروسز ملیں گی۔</p>
+            <button class="close-btn" onclick="closeWelcome()">چلو شروع کرتے ہیں</button>
+        </div>
     </div>
 
-    <div class="balance-card">
-        <p style="margin:0; font-size: 14px;">میرا بیلنس (My Balance)</p>
-        <h1 id="user-balance" style="margin:10px 0;">$ 0.00</h1>
-    </div>
-
-    <div class="order-box">
-        <h3 style="text-align:center; color:#3b82f6;">نیا آرڈر لگائیں</h3>
-        
-        <label>سروس منتخب کریں:</label>
-        <select>
-            <option>Instagram Followers - $0.50</option>
-            <option>TikTok Likes - $0.20</option>
-            <option>YouTube Views - $1.00</option>
-        </select>
-
-        <label>لنک ڈالیں (Link):</label>
-        <input type="text" placeholder="https://www.instagram.com/p/...">
-
-        <label>تعداد (Quantity):</label>
-        <input type="number" id="qty" placeholder="مثلاً 1000">
-
-        <button class="btn-order" onclick="placeOrder()">آرڈر مکمل کریں</button>
+    <div class="main-content">
+        <h1>Shan Ali SMM Dashboard</h1>
+        <p>آپ کا لنک: https://shan35407529.github.io/shan-smm-panel-/</p>
     </div>
 
     <script>
-        // یہاں ہم چیک کریں گے کہ کیا یہ شان بھائی (ایڈمن) ہیں؟
-        // ابھی کے لیے ہم ایک فرضی ویری ایبل استعمال کر رہے ہیں
-        var isAdmin = true; // اگر آپ ایڈمن ہیں تو اسے true رکھیں
-
+        // جب پیج لوڈ ہو تو پاپ اپ دکھائیں
         window.onload = function() {
-            if(isAdmin) {
-                document.getElementById("user-balance").innerText = "Unlimited ♾️";
-                document.getElementById("admin-tag").style.display = "block";
-            }
+            document.getElementById("welcomeBox").style.display = "flex";
         };
 
-        function placeOrder() {
-            var qty = document.getElementById("qty").value;
-            if(qty == "") {
-                alert("براہ کرم تعداد لکھیں!");
-                return;
-            }
-
-            if(isAdmin) {
-                alert("ایڈمن آرڈر کامیاب! آپ کے لیے کوئی بیلنس کٹوتی نہیں ہوگی۔");
-            } else {
-                alert("آرڈر لگ گیا ہے، بیلنس چیک کیا جا رہا ہے۔");
-            }
+        // بٹن دبانے پر پاپ اپ غائب کر دیں
+        function closeWelcome() {
+            document.getElementById("welcomeBox").style.display = "none";
         }
     </script>
+
 </body>
 </html>
