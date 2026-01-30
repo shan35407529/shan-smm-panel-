@@ -20,4 +20,16 @@
         <p>پہلے سے اکاؤنٹ ہے؟ <a href="login.html">لاگ ان کریں</a></p>
     </div>
 </body>
-</html>
+</html><link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Shan Ali SMM">
+<link rel="apple-touch-icon" href="logo.png">
+
+<script>
+  // یہ کوڈ گاہک کو ایپ انسٹال کرنے کا کہے گا
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+
