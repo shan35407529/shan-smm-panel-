@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Shan Ali SMM</title>
+    <style>
+        body { font-family: Arial; background: #0f172a; color: white; margin: 0; padding: 20px; }
+        .sidebar { background: #1e293b; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .stat-card { background: #3b82f6; padding: 20px; border-radius: 10px; text-align: center; font-weight: bold; }
+        .admin-box { background: #1e293b; padding: 20px; border-radius: 10px; margin-top: 20px; border: 1px solid #334155; }
+        input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; }
+        button { background: #10b981; color: white; font-weight: bold; cursor: pointer; }
+        h2 { color: #3b82f6; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>شان علی ایڈمن کنٹرول 👑</h2>
+        <p>یہاں سے آپ اپنا کاروبار سنبھالیں</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">کل صارفین<br> 25</div>
+        <div class="stat-card">کل آرڈرز<br> 142</div>
+        <div class="stat-card" style="background: #ef4444;">ٹوٹل کمائی<br> Rs. 5000</div>
+    </div>
+
+    <div class="admin-box">
+        <h3>بیلنس ایڈ کریں (Add Balance)</h3>
+        <input type="text" placeholder="صارف کا نام (Username)">
+        <input type="number" placeholder="رقم (Amount)">
+        <button onclick="alert('Balance Added Successfully!')">پیسے جمع کریں</button>
+    </div>
+
+    <div class="admin-box">
+        <h3>آرڈر اپڈیٹ کریں</h3>
+        <input type="text" placeholder="آرڈر آئی ڈی (Order ID)">
+        <select style="width: 100%; padding: 12px; border-radius: 5px;">
+            <option>Pending</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
+        </select>
+        <button style="background: #3b82f6;">اسٹیٹس بدلیں</button>
+    </div>
+
+    <p style="text-align: center; margin-top: 20px;"><a href="dashboard.html" style="color: #94a3b8;">← واپس ڈیش بورڈ</a></p>
+
+</body>
+</html>
