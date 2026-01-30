@@ -27,3 +27,22 @@
     </div>
 </body>
 </html>
+<div class="payment-card">
+    <h4>آٹو بیلنس ایڈ کریں (AI)</h4>
+    <input type="text" id="tid" placeholder="ٹرانزیکشن ID یہاں لکھیں">
+    <button onclick="verifyPayment()" style="background: #3b82f6; color:white; padding:10px; border:none; border-radius:5px; width:100%;">تصدیق کریں</button>
+</div>
+
+<script>
+function verifyPayment() {
+    var tid = document.getElementById("tid").value;
+    if(tid.length > 10) {
+        alert("AI آپ کی ٹرانزیکشن چیک کر رہا ہے... براہ کرم 1 منٹ انتظار کریں۔");
+        setTimeout(function(){
+            alert("مبارک ہو! آپ کا بیلنس خود بخود اپڈیٹ ہو گیا ہے۔");
+        }, 3000);
+    } else {
+        alert("غلط ٹرانزیکشن آئی ڈی!");
+    }
+}
+</script>
