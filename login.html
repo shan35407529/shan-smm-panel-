@@ -5,70 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Shan Ali SMM</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #0f172a; color: white; text-align: center; padding: 20px; margin: 0; }
-        .lang-header { background: #1e293b; padding: 10px; margin-bottom: 30px; border-bottom: 2px solid #3b82f6; display: flex; justify-content: center; gap: 15px; }
-        .lang-btn { padding: 8px 15px; border-radius: 20px; border: none; cursor: pointer; font-weight: bold; font-size: 14px; transition: 0.3s; }
-        .btn-ur { background: #3b82f6; color: white; }
-        .btn-en { background: #64748b; color: white; }
-        .login-card { background: #1e293b; padding: 30px; border-radius: 15px; display: inline-block; border: 1px solid #3b82f6; width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .eng-mode { text-align: left !important; direction: ltr; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box; }
-        button#main-btn { width: 100%; padding: 12px; background: #3b82f6; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 16px; }
-        a { color: #94a3b8; text-decoration: none; font-size: 14px; display: block; margin-top: 15px; }
+        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding: 20px; }
+        .lang-header { background: #1e293b; padding: 15px; border-bottom: 2px solid #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; gap: 10px; }
+        .lang-btn { padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; }
+        .login-card { background: #1e293b; padding: 30px; border-radius: 15px; border: 1px solid #3b82f6; width: 300px; margin: auto; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; background: #0f172a; color: white; box-sizing: border-box; }
+        button#main-btn { width: 100%; padding: 12px; background: #3b82f6; border-radius: 8px; border: none; color: white; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
     <div class="lang-header">
-        <button class="lang-btn btn-ur" onclick="setLanguage('ur')">اردو (Urdu)</button>
-        <button class="lang-btn btn-en" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" style="background:#3b82f6; color:white;" onclick="saveLang('ur')">اردو (Urdu)</button>
+        <button class="lang-btn" style="background:#64748b; color:white;" onclick="saveLang('en')">English</button>
     </div>
 
     <div class="login-card" id="login-box">
-        <h2 id="login-title">لاگ ان 🔑</h2>
-        <p id="login-desc" style="font-size: 13px; color: #94a3b8;">اپنا اکاؤنٹ لاگ ان کریں</p>
-        
-        <input type="email" id="email" placeholder="ای میل لکھیں" required>
-        <input type="password" id="pass" placeholder="پاس ورڈ لکھیں" required>
-        
-        <button id="main-btn" onclick="handleLogin()">داخل ہوں</button>
-        
-        <a id="reg-link" href="register.html">نیا اکاؤنٹ بنائیں؟ (Register)</a>
+        <h2 id="l-title">لاگ ان 🔑</h2>
+        <input type="email" id="email" placeholder="ای میل لکھیں">
+        <input type="password" id="pass" placeholder="پاس ورڈ لکھیں">
+        <button id="main-btn" onclick="login()">داخل ہوں</button>
     </div>
 
     <script>
-        function setLanguage(lang) {
-            const box = document.getElementById('login-box');
+        // زبان سیو کرنے کا فنکشن
+        function saveLang(lang) {
+            localStorage.setItem("selectedLang", lang);
+            updateUI(lang);
+        }
+
+        function updateUI(lang) {
             if(lang === 'en') {
-                document.getElementById('login-title').innerText = "Login 🔑";
-                document.getElementById('login-desc').innerText = "Login to your account";
+                document.getElementById('l-title').innerText = "Login 🔑";
                 document.getElementById('email').placeholder = "Enter Email";
                 document.getElementById('pass').placeholder = "Enter Password";
                 document.getElementById('main-btn').innerText = "Login";
-                document.getElementById('reg-link').innerText = "Don't have an account? Register";
-                box.classList.add('eng-mode');
+                document.getElementById('login-box').style.textAlign = "left";
+                document.getElementById('login-box').style.direction = "ltr";
             } else {
-                location.reload(); // دوبارہ اردو پر جانے کے لیے
+                location.reload(); 
             }
         }
 
-        function handleLogin() {
-            var email = document.getElementById("email").value;
-            var pass = document.getElementById("pass").value;
+        function login() {
+            window.location.href = "dashboard.html";
+        }
 
-            // ایڈمن لاگ ان (شان بھائی)
-            if (email === "shanali@admin.com" && pass === "shan786") {
-                window.location.href = "admin.html";
-            } 
-            // عام گاہک
-            else if (email !== "" && pass !== "") {
-                window.location.href = "dashboard.html";
-            } 
-            else {
-                alert("Please fill all fields!");
-            }
+        // پیج لوڈ ہوتے ہی چیک کرے گا
+        window.onload = function() {
+            let currentLang = localStorage.getItem("selectedLang");
+            if(currentLang) updateUI(currentLang);
         }
     </script>
-
 </body>
 </html>
