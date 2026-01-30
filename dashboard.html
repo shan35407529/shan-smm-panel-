@@ -1,14 +1,75 @@
-<script>
-    window.onload = function() {
-        let lang = localStorage.getItem("selectedLang");
-        if(lang === 'en') {
-            // یہاں انگلش کے الفاظ لکھ دیں
-            document.querySelector('h2').innerText = "Shan Ali SMM Panel 🚀";
-            document.querySelector('.balance-box').innerText = "My Balance: $ 0.00";
-            document.querySelector('h3').innerText = "New Order";
-            document.querySelector('button').innerText = "Place Order";
-            document.body.style.direction = "ltr";
-            document.body.style.textAlign = "left";
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Shan Ali SMM</title>
+    <style>
+        body { font-family: Arial; background: #0f172a; color: white; text-align: center; margin: 0; padding: 20px; }
+        .header { background: #1e293b; padding: 20px; border-radius: 15px; border-bottom: 4px solid #3b82f6; margin-bottom: 20px; }
+        .balance-card { background: linear-gradient(135deg, #3b82f6, #1d4ed8); padding: 20px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .order-box { background: #1e293b; padding: 20px; border-radius: 15px; border: 1px solid #334155; text-align: right; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; background: #0f172a; color: white; box-sizing: border-box; border: 1px solid #3b82f6; }
+        .btn-order { width: 100%; padding: 15px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; }
+        .admin-badge { background: #f59e0b; color: black; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2 id="welcome-text">خوش آمدید، شان علی! 🚀</h2>
+        <div id="admin-tag" style="display:none;"><span class="admin-badge">ADMIN MODE</span></div>
+    </div>
+
+    <div class="balance-card">
+        <p style="margin:0; font-size: 14px;">میرا بیلنس (My Balance)</p>
+        <h1 id="user-balance" style="margin:10px 0;">$ 0.00</h1>
+    </div>
+
+    <div class="order-box">
+        <h3 style="text-align:center; color:#3b82f6;">نیا آرڈر لگائیں</h3>
+        
+        <label>سروس منتخب کریں:</label>
+        <select>
+            <option>Instagram Followers - $0.50</option>
+            <option>TikTok Likes - $0.20</option>
+            <option>YouTube Views - $1.00</option>
+        </select>
+
+        <label>لنک ڈالیں (Link):</label>
+        <input type="text" placeholder="https://www.instagram.com/p/...">
+
+        <label>تعداد (Quantity):</label>
+        <input type="number" id="qty" placeholder="مثلاً 1000">
+
+        <button class="btn-order" onclick="placeOrder()">آرڈر مکمل کریں</button>
+    </div>
+
+    <script>
+        // یہاں ہم چیک کریں گے کہ کیا یہ شان بھائی (ایڈمن) ہیں؟
+        // ابھی کے لیے ہم ایک فرضی ویری ایبل استعمال کر رہے ہیں
+        var isAdmin = true; // اگر آپ ایڈمن ہیں تو اسے true رکھیں
+
+        window.onload = function() {
+            if(isAdmin) {
+                document.getElementById("user-balance").innerText = "Unlimited ♾️";
+                document.getElementById("admin-tag").style.display = "block";
+            }
+        };
+
+        function placeOrder() {
+            var qty = document.getElementById("qty").value;
+            if(qty == "") {
+                alert("براہ کرم تعداد لکھیں!");
+                return;
+            }
+
+            if(isAdmin) {
+                alert("ایڈمن آرڈر کامیاب! آپ کے لیے کوئی بیلنس کٹوتی نہیں ہوگی۔");
+            } else {
+                alert("آرڈر لگ گیا ہے، بیلنس چیک کیا جا رہا ہے۔");
+            }
         }
-    }
-</script>
+    </script>
+</body>
+</html>
