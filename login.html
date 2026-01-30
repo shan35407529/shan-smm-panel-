@@ -5,59 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Shan Ali SMM</title>
     <style>
-        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding: 20px; }
-        .lang-header { background: #1e293b; padding: 15px; border-bottom: 2px solid #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; gap: 10px; }
-        .lang-btn { padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; }
-        .login-card { background: #1e293b; padding: 30px; border-radius: 15px; border: 1px solid #3b82f6; width: 300px; margin: auto; }
+        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding-top: 50px; }
+        .login-card { background: #1e293b; padding: 30px; border-radius: 15px; border: 1px solid #3b82f6; width: 80%; max-width: 320px; margin: auto; }
         input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; background: #0f172a; color: white; box-sizing: border-box; }
-        button#main-btn { width: 100%; padding: 12px; background: #3b82f6; border-radius: 8px; border: none; color: white; font-weight: bold; cursor: pointer; }
+        .login-btn { width: 100%; padding: 12px; background: #3b82f6; border-radius: 8px; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 18px; }
     </style>
 </head>
 <body>
 
-    <div class="lang-header">
-        <button class="lang-btn" style="background:#3b82f6; color:white;" onclick="saveLang('ur')">اردو (Urdu)</button>
-        <button class="lang-btn" style="background:#64748b; color:white;" onclick="saveLang('en')">English</button>
-    </div>
-
-    <div class="login-card" id="login-box">
-        <h2 id="l-title">لاگ ان 🔑</h2>
-        <input type="email" id="email" placeholder="ای میل لکھیں">
-        <input type="password" id="pass" placeholder="پاس ورڈ لکھیں">
-        <button id="main-btn" onclick="login()">داخل ہوں</button>
+    <div class="login-card">
+        <h2>لاگ ان 🔑</h2>
+        <input type="text" id="user" placeholder="ای میل یا یوزرنیم">
+        <input type="password" id="pass" placeholder="پاس ورڈ">
+        <button class="login-btn" onclick="startLogin()">داخل ہوں</button>
     </div>
 
     <script>
-        // زبان سیو کرنے کا فنکشن
-        function saveLang(lang) {
-            localStorage.setItem("selectedLang", lang);
-            updateUI(lang);
-        }
-
-        function updateUI(lang) {
-            if(lang === 'en') {
-                document.getElementById('l-title').innerText = "Login 🔑";
-                document.getElementById('email').placeholder = "Enter Email";
-                document.getElementById('pass').placeholder = "Enter Password";
-                document.getElementById('main-btn').innerText = "Login";
-                document.getElementById('login-box').style.textAlign = "left";
-                document.getElementById('login-box').style.direction = "ltr";
-            } else {
-                location.reload(); 
-            }
-        }
-
-        function login() {
+        function startLogin() {
+            // یہ لائن آپ کو پکا ڈیش بورڈ پر لے جائے گی
             window.location.href = "dashboard.html";
         }
-
-        // پیج لوڈ ہوتے ہی چیک کرے گا
-        window.onload = function() {
-            let currentLang = localStorage.getItem("selectedLang");
-            if(currentLang) updateUI(currentLang);
-        }
     </script>
-</body>
-</html><link rel="manifest" href="manifest.json">
 
-<button onclick="installApp()" style="background: #f59e0b; color: black; border: none; padding: 10px; border-radius: 5px; cursor: pointer; margin-top: 10px; font-weight: bold;">📲 ایپ ڈاؤن لوڈ کریں</button>
+</body>
+</html>
