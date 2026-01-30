@@ -7,18 +7,18 @@
     <style>
         body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding: 20px; }
         .card { background: #1e293b; padding: 25px; border-radius: 15px; border: 2px solid #3b82f6; max-width: 380px; margin: auto; }
-        .method { background: #ffffff; color: #000; padding: 15px; border-radius: 10px; margin: 15px 0; font-weight: bold; border-left: 8px solid #3b82f6; }
-        .ai-box { background: #111827; border: 1px dashed #10b981; padding: 15px; border-radius: 10px; margin-top: 20px; }
-        input { width: 90%; padding: 10px; margin-top: 10px; border-radius: 5px; border: none; }
-        .btn-verify { background: #10b981; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 95%; font-weight: bold; }
+        .method { background: #ffffff; color: #000; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-weight: bold; border-left: 8px solid #3b82f6; }
+        .ai-form { background: #111827; border: 1px dashed #10b981; padding: 20px; border-radius: 10px; text-align: right; }
+        label { font-size: 14px; color: #10b981; display: block; margin-top: 10px; }
+        input { width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; border: none; background: #1e293b; color: white; box-sizing: border-box; }
+        .btn-verify { background: #10b981; color: white; padding: 12px; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; width: 100%; font-weight: bold; font-size: 16px; }
         .wa-btn { background: #25d366; color: white; padding: 12px; text-decoration: none; display: block; border-radius: 8px; margin-top: 15px; font-weight: bold; }
-        .back { display: block; margin-top: 15px; color: #94a3b8; text-decoration: none; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h2>فنڈز جمع کروائیں 💰</h2>
+        <h2 style="margin-bottom: 10px;">فنڈز جمع کروائیں 💰</h2>
         
         <div class="method">
             <p style="color: #22c55e; margin: 0;">EasyPaisa / JazzCash</p>
@@ -26,28 +26,35 @@
             <small>نام: Shan Ali Bhatti</small>
         </div>
 
-        <div class="ai-box">
-            <h4 style="color: #10b981; margin: 0;">🤖 AI آٹو ٹرانزیکشن چیکر</h4>
-            <p style="font-size: 12px;">رقم بھیجنے کے بعد ٹرانزیکشن ID لکھیں</p>
-            <input type="text" id="tid" placeholder="TID: 1234567890">
-            <button class="btn-verify" onclick="checkPayment()">تصدیق کریں (Verify)</button>
+        <div class="ai-form">
+            <h4 style="color: #10b981; margin: 0; text-align: center;">🤖 AI پیمنٹ رپورٹ فارم</h4>
+            
+            <label>آپ کا موبائل نمبر (جس سے پیسے بھیجے):</label>
+            <input type="number" id="senderNum" placeholder="03xxxxxxxxx">
+
+            <label>بھیجی گئی رقم (Amount):</label>
+            <input type="number" id="amount" placeholder="مثلاً 500">
+
+            <label>ٹرانزیکشن آئی ڈی (TID):</label>
+            <input type="text" id="tid" placeholder="ٹرانزیکشن آئی ڈی لکھیں">
+
+            <button class="btn-verify" onclick="submitPayment()">رپورٹ جمع کریں</button>
         </div>
 
-        <a href="https://wa.me/923107199210" target="_blank" class="wa-btn">واٹس ایپ پر رابطہ کریں 💬</a>
-        
-        <a href="dashboard.html" class="back">← واپس ڈیش بورڈ</a>
+        <a href="https://wa.me/923107199210" target="_blank" class="wa-btn">واٹس ایپ پر ثبوت بھیجیں 💬</a>
+        <a href="dashboard.html" style="display:block; margin-top:15px; color:#94a3b8; text-decoration:none;">← واپس ڈیش بورڈ</a>
     </div>
 
     <script>
-        function checkPayment() {
+        function submitPayment() {
+            var num = document.getElementById("senderNum").value;
+            var amt = document.getElementById("amount").value;
             var id = document.getElementById("tid").value;
-            if(id.length < 8) {
-                alert("براہ کرم صحیح ٹرانزیکشن آئی ڈی لکھیں!");
+
+            if(num == "" || amt == "" || id == "") {
+                alert("براہ کرم تمام خانے پُر کریں!");
             } else {
-                alert("AI آپ کی ٹرانزیکشن " + id + " چیک کر رہا ہے... براہ کرم انتظار کریں۔");
-                setTimeout(function(){
-                    alert("تصدیق کامیاب! بیلنس تھوڑی دیر میں ایڈ ہو جائے گا۔");
-                }, 4000);
+                alert("شکریہ! آپ کی رپورٹ موصول ہوگئی ہے۔\nنمبر: " + num + "\nرقم: " + amt + "\nآئی ڈی: " + id + "\nAI اس کی تصدیق کر رہا ہے۔ بیلنس جلد ایڈ ہو جائے گا۔");
             }
         }
     </script>
