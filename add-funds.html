@@ -11,7 +11,8 @@
         .ai-box { background: #111827; border: 1px dashed #10b981; padding: 15px; border-radius: 10px; margin-top: 20px; }
         input { width: 90%; padding: 10px; margin-top: 10px; border-radius: 5px; border: none; }
         .btn-verify { background: #10b981; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 95%; font-weight: bold; }
-        .wa-btn { background: #25d366; color: white; padding: 12px; text-decoration: none; display: block; border-radius: 8px; margin-top: 15px; }
+        .wa-btn { background: #25d366; color: white; padding: 12px; text-decoration: none; display: block; border-radius: 8px; margin-top: 15px; font-weight: bold; }
+        .back { display: block; margin-top: 15px; color: #94a3b8; text-decoration: none; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -27,13 +28,14 @@
 
         <div class="ai-box">
             <h4 style="color: #10b981; margin: 0;">🤖 AI آٹو ٹرانزیکشن چیکر</h4>
-            <p style="font-size: 12px;">پیسے بھیجنے کے بعد ٹرانزیکشن آئی ڈی یہاں لکھیں</p>
-            <input type="text" id="tid" placeholder="TID: 0123456789">
+            <p style="font-size: 12px;">رقم بھیجنے کے بعد ٹرانزیکشن ID لکھیں</p>
+            <input type="text" id="tid" placeholder="TID: 1234567890">
             <button class="btn-verify" onclick="checkPayment()">تصدیق کریں (Verify)</button>
         </div>
 
-        <a href="https://wa.me/923035407529" class="wa-btn">واٹس ایپ پر رابطہ کریں</a>
-        <a href="dashboard.html" style="display:block; margin-top:15px; color:#94a3b8; text-decoration:none;">← واپس ڈیش بورڈ</a>
+        <a href="https://wa.me/923107199210" target="_blank" class="wa-btn">واٹس ایپ پر رابطہ کریں 💬</a>
+        
+        <a href="dashboard.html" class="back">← واپس ڈیش بورڈ</a>
     </div>
 
     <script>
@@ -42,9 +44,9 @@
             if(id.length < 8) {
                 alert("براہ کرم صحیح ٹرانزیکشن آئی ڈی لکھیں!");
             } else {
-                alert("AI آپ کی ٹرانزیکشن نمبر " + id + " چیک کر رہا ہے... براہ کرم 1 منٹ تک انتظار کریں اور پیج ریفریش نہ کریں۔");
+                alert("AI آپ کی ٹرانزیکشن " + id + " چیک کر رہا ہے... براہ کرم انتظار کریں۔");
                 setTimeout(function(){
-                    alert("آپ کی ٹرانزیکشن کی تصدیق ہو گئی ہے! بیلنس 5 سے 10 منٹ میں آپ کے اکاؤنٹ میں نظر آئے گا۔");
+                    alert("تصدیق کامیاب! بیلنس تھوڑی دیر میں ایڈ ہو جائے گا۔");
                 }, 4000);
             }
         }
