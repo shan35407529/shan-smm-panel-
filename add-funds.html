@@ -11,6 +11,7 @@
         .ai-form { background: #111827; border: 1px dashed #10b981; padding: 20px; border-radius: 10px; text-align: right; }
         label { font-size: 14px; color: #10b981; display: block; margin-top: 10px; }
         input { width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; border: none; background: #1e293b; color: white; box-sizing: border-box; }
+        .converter-text { font-size: 13px; color: #94a3b8; margin-top: 5px; text-align: center; display: block; }
         .btn-verify { background: #10b981; color: white; padding: 12px; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; width: 100%; font-weight: bold; font-size: 16px; }
         .wa-btn { background: #25d366; color: white; padding: 12px; text-decoration: none; display: block; border-radius: 8px; margin-top: 15px; font-weight: bold; }
     </style>
@@ -18,46 +19,9 @@
 <body>
 
     <div class="card">
-        <h2 style="margin-bottom: 10px;">فنڈز جمع کروائیں 💰</h2>
+        <h2>فنڈز جمع کروائیں 💰</h2>
         
         <div class="method">
             <p style="color: #22c55e; margin: 0;">EasyPaisa / JazzCash</p>
             <h3 style="margin: 5px 0;">03035407529</h3>
-            <small>نام: Shan Ali Bhatti</small>
-        </div>
-
-        <div class="ai-form">
-            <h4 style="color: #10b981; margin: 0; text-align: center;">🤖 AI پیمنٹ رپورٹ فارم</h4>
-            
-            <label>آپ کا موبائل نمبر (جس سے پیسے بھیجے):</label>
-            <input type="number" id="senderNum" placeholder="03xxxxxxxxx">
-
-            <label>بھیجی گئی رقم (Amount):</label>
-            <input type="number" id="amount" placeholder="مثلاً 500">
-
-            <label>ٹرانزیکشن آئی ڈی (TID):</label>
-            <input type="text" id="tid" placeholder="ٹرانزیکشن آئی ڈی لکھیں">
-
-            <button class="btn-verify" onclick="submitPayment()">رپورٹ جمع کریں</button>
-        </div>
-
-        <a href="https://wa.me/923107199210" target="_blank" class="wa-btn">واٹس ایپ پر ثبوت بھیجیں 💬</a>
-        <a href="dashboard.html" style="display:block; margin-top:15px; color:#94a3b8; text-decoration:none;">← واپس ڈیش بورڈ</a>
-    </div>
-
-    <script>
-        function submitPayment() {
-            var num = document.getElementById("senderNum").value;
-            var amt = document.getElementById("amount").value;
-            var id = document.getElementById("tid").value;
-
-            if(num == "" || amt == "" || id == "") {
-                alert("براہ کرم تمام خانے پُر کریں!");
-            } else {
-                alert("شکریہ! آپ کی رپورٹ موصول ہوگئی ہے۔\nنمبر: " + num + "\nرقم: " + amt + "\nآئی ڈی: " + id + "\nAI اس کی تصدیق کر رہا ہے۔ بیلنس جلد ایڈ ہو جائے گا۔");
-            }
-        }
-    </script>
-
-</body>
-</html>
+            <small>نام: Shan Ali
