@@ -2,12 +2,42 @@
 <html lang="ur">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Shan Ali</title>
+    <title>لاگ ان - Shan Ali SMM</title>
+    <style>
+        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding: 50px; }
+        .login-box { background: #1e293b; padding: 30px; border-radius: 10px; display: inline-block; border: 1px solid #3b82f6; }
+        input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; }
+        button { background: #3b82f6; color: white; font-weight: bold; cursor: pointer; }
+    </style>
 </head>
-<body style="background: #f4f4f4; text-align: center; padding: 50px;">
-    <h2>لاگ ان کریں</h2>
-    <input type="text" placeholder="یوزر نیم"><br><br>
-    <input type="password" placeholder="پاس ورڈ"><br><br>
-    <a href="dashboard.html"><button style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">داخل ہوں</button></a>
+<body>
+
+    <div class="login-box">
+        <h2>لاگ ان کریں 🔑</h2>
+        <input type="email" id="email" placeholder="آپ کا ای میل">
+        <input type="password" id="pass" placeholder="آپ کا پاس ورڈ">
+        <button onclick="login()">داخل ہوں</button>
+        <p>اکاؤنٹ نہیں ہے؟ <a href="register.html" style="color: #3b82f6;">رجسٹر کریں</a></p>
+    </div>
+
+    <script>
+        function login() {
+            var email = document.getElementById("email").value;
+            var pass = document.getElementById("pass").value;
+
+            // --- آپ کا ایڈمن اکاؤنٹ یہاں ہے ---
+            if (email === "shan@admin.com" && pass === "shan786") {
+                alert("خوش آمدید شان علی بھائی (ایڈمن)");
+                window.location.href = "admin.html"; // یہ آپ کو ایڈمن پینل پر لے جائے گا
+            } 
+            // --- عام گاہکوں کے لیے ---
+            else if (email !== "" && pass !== "") {
+                window.location.href = "dashboard.html"; // گاہک کو ڈیش بورڈ پر لے جائے گا
+            } 
+            else {
+                alert("براہ کرم صحیح معلومات درج کریں");
+            }
+        }
+    </script>
 </body>
 </html>
