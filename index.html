@@ -3,128 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHAN PANEL AI - Dashboard</title>
+    <title>SHAN PANEL AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0b0f19; color: white; font-family: 'Segoe UI', sans-serif; }
-
-        /* Professional Header */
-        header {
-            background: #161b2c;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #00f2ff;
-            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.2);
-        }
-        .logo-area { display: flex; align-items: center; }
-        .logo-area img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid #00f2ff;
-            margin-right: 10px;
-            object-fit: cover;
-        }
-        .brand-name { font-size: 1.2rem; font-weight: bold; color: #00f2ff; letter-spacing: 1px; }
-
-        /* Main Container */
-        .container { padding: 20px; padding-bottom: 80px; }
-
-        /* Welcome Card */
-        .welcome-card {
-            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        .welcome-card h2 { font-size: 1.5rem; margin-bottom: 5px; }
-        .welcome-card p { font-size: 1.1rem; font-weight: bold; }
-
-        /* Modern Grid Layout */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-        .stat-box {
-            background: #1c2333;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #2d3748;
-            transition: 0.3s;
-        }
-        .stat-box:active { transform: scale(0.95); border-color: #00f2ff; }
-        .stat-box i { font-size: 1.8rem; color: #00f2ff; margin-bottom: 10px; }
-        .stat-box h3 { font-size: 1.3rem; margin-bottom: 5px; }
-        .stat-box p { font-size: 0.8rem; color: #a0aec0; text-transform: uppercase; }
-
-        /* Professional Bottom Navigation */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #161b2c;
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            border-top: 1px solid #2d3748;
-        }
-        .bottom-nav a { color: #a0aec0; text-decoration: none; font-size: 1.4rem; transition: 0.3s; }
-        .bottom-nav a.active { color: #00f2ff; text-shadow: 0 0 10px #00f2ff; }
+        body { background: #0b0f19; color: white; font-family: sans-serif; text-align: center; margin: 0; }
+        header { background: #161b2c; padding: 15px; border-bottom: 2px solid #00f2ff; display: flex; align-items: center; justify-content: center; }
+        .logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00f2ff; margin-right: 10px; }
+        .card { background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 20px; border-radius: 15px; margin: 20px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
+        .box { background: #1c2333; padding: 20px; border-radius: 12px; border: 1px solid #2d3748; }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="logo-area">
-        <img src="logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/50/00f2ff/000000?text=AI'">
-        <div class="brand-name">SHAN PANEL AI</div>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h2 style="color:#00f2ff">SHAN PANEL AI</h2>
+    </header>
+    <div class="card">
+        <h3>خوش آمدید، شان علی!</h3>
+        <p>بیلنس: $150.00</p>
     </div>
-    <div class="user-icon"><i class="fas fa-user-circle fa-2x" style="color: #a0aec0;"></i></div>
-</header>
-
-<div class="container">
-    <div class="welcome-card">
-        <h2>Assalam-o-Alaikum, Shan Ali!</h2>
-        <p>Available Balance: $150.00</p>
+    <div class="grid">
+        <div class="box"><i class="fas fa-shopping-cart"></i><p>آرڈرز</p><h4>0</h4></div>
+        <div class="box"><i class="fas fa-wallet"></i><p>بیلنس</p><h4>$150</h4></div>
     </div>
-
-    <div class="stats-grid">
-        <div class="stat-box">
-            <i class="fas fa-box-open"></i>
-            <h3>1,240</h3>
-            <p>Total Orders</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-wallet"></i>
-            <h3>$150</h3>
-            <p>Your Funds</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-headset"></i>
-            <h3>2</h3>
-            <p>Active Tickets</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-chart-line"></i>
-            <h3>VIP</h3>
-            <p>Account Status</p>
-        </div>
-    </div>
-</div>
-
-<div class="bottom-nav">
-    <a href="index.html" class="active"><i class="fas fa-home"></i></a>
-    <a href="orders.html"><i class="fas fa-shopping-bag"></i></a>
-    <a href="add_funds.html"><i class="fas fa-plus-circle"></i></a>
-    <a href="settings.html"><i class="fas fa-user-cog"></i></a>
-</div>
-
 </body>
 </html>
