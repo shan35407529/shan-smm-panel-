@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHAN PANEL AI</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Shan Ali SMM Panel</title>
     <style>
-        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; margin: 0; direction: rtl; }
-        header { background: #1a2236; padding: 15px; border-bottom: 2px solid #00e5ff; display: flex; align-items: center; justify-content: center; }
-        .logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00e5ff; margin-left: 12px; }
-        .welcome-card { background: linear-gradient(135deg, #00b4db, #0083b0); padding: 25px; border-radius: 20px; margin: 20px; }
-        .stats-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; }
-        .stat-box { background: #1f2937; padding: 20px; border-radius: 15px; border: 1px solid #374151; text-decoration: none; color: white; display: block; }
-        .stat-box i { color: #00e5ff; font-size: 1.5rem; margin-bottom: 10px; }
+        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        .hero { padding: 40px 10px; }
+        h1 { color: #00e5ff; font-size: 28px; margin-bottom: 10px; }
+        p { color: #ccc; font-size: 16px; margin-bottom: 30px; }
+        .btn-container { display: flex; flex-direction: column; gap: 15px; max-width: 300px; margin: auto; }
+        .btn { padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; display: block; }
+        .login-btn { background: #00e5ff; color: #000; }
+        .reg-btn { border: 2px solid #00e5ff; color: #00e5ff; }
+        .lang-text { display: block; font-size: 14px; margin-top: 5px; opacity: 0.8; }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <h2 style="color:#00e5ff; margin:0;">شان پینل AI</h2>
-    </header>
 
-    <div class="welcome-card">
-        <h3>السلام علیکم، شان علی بھائی!</h3>
-        <p>آپ کا بیلنس: <strong>$150.00</strong></p>
-    </div>
-
-    <div class="stats-container">
-        <a href="orders.html" class="stat-box">
-            <i class="fas fa-shopping-cart"></i>
-            <h3>آرڈرز</h3>
-            <p>چیک کریں</p>
-        </a>
+    <div class="hero">
+        <h1>شان علی SMM پینل</h1>
+        <h1>Shan Ali SMM Panel</h1>
         
-        <a href="add-funds.html" class="stat-box">
-            <i class="fas fa-wallet"></i>
-            <h3>پیسے جمع کریں</h3>
-            <p>ایزی پیسہ / جاز کیش</p>
-        </a>
+        <p>پاکستان کا سب سے سستا اور تیز ترین سوشل میڈیا پینل<br>
+        Pakistan's Cheapest & Fastest SMM Panel</p>
+        
+        <div class="btn-container">
+            <a href="login.html" class="btn login-btn">
+                لاگ ان کریں
+                <span class="lang-text">Login Now</span>
+            </a>
+            
+            <a href="register.html" class="btn reg-btn">
+                اکاؤنٹ بنائیں
+                <span class="lang-text">Create Account</span>
+            </a>
+        </div>
     </div>
+
 </body>
 </html>
