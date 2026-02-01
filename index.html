@@ -6,26 +6,38 @@
     <title>SHAN PANEL AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background: #0b0f19; color: white; font-family: sans-serif; text-align: center; margin: 0; }
-        header { background: #161b2c; padding: 15px; border-bottom: 2px solid #00f2ff; display: flex; align-items: center; justify-content: center; }
-        .logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00f2ff; margin-right: 10px; }
-        .card { background: linear-gradient(135deg, #00d2ff, #3a7bd5); padding: 20px; border-radius: 15px; margin: 20px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
-        .box { background: #1c2333; padding: 20px; border-radius: 12px; border: 1px solid #2d3748; }
+        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; margin: 0; direction: rtl; }
+        header { background: #1a2236; padding: 15px; border-bottom: 2px solid #00e5ff; display: flex; align-items: center; justify-content: center; }
+        .logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00e5ff; margin-left: 12px; }
+        .welcome-card { background: linear-gradient(135deg, #00b4db, #0083b0); padding: 25px; border-radius: 20px; margin: 20px; }
+        .stats-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; }
+        .stat-box { background: #1f2937; padding: 20px; border-radius: 15px; border: 1px solid #374151; text-decoration: none; color: white; display: block; }
+        .stat-box i { color: #00e5ff; font-size: 1.5rem; margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <header>
         <img src="logo.png" alt="Logo" class="logo">
-        <h2 style="color:#00f2ff">SHAN PANEL AI</h2>
+        <h2 style="color:#00e5ff; margin:0;">شان پینل AI</h2>
     </header>
-    <div class="card">
-        <h3>خوش آمدید، شان علی!</h3>
-        <p>بیلنس: $150.00</p>
+
+    <div class="welcome-card">
+        <h3>السلام علیکم، شان علی بھائی!</h3>
+        <p>آپ کا بیلنس: <strong>$150.00</strong></p>
     </div>
-    <div class="grid">
-        <div class="box"><i class="fas fa-shopping-cart"></i><p>آرڈرز</p><h4>0</h4></div>
-        <div class="box"><i class="fas fa-wallet"></i><p>بیلنس</p><h4>$150</h4></div>
+
+    <div class="stats-container">
+        <a href="orders.html" class="stat-box">
+            <i class="fas fa-shopping-cart"></i>
+            <h3>آرڈرز</h3>
+            <p>چیک کریں</p>
+        </a>
+        
+        <a href="add-funds.html" class="stat-box">
+            <i class="fas fa-wallet"></i>
+            <h3>پیسے جمع کریں</h3>
+            <p>ایزی پیسہ / جاز کیش</p>
+        </a>
     </div>
 </body>
 </html>
