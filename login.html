@@ -3,29 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Shan Ali SMM</title>
+    <title>لاگ ان - شان پینل</title>
     <style>
-        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding-top: 50px; }
-        .login-card { background: #1e293b; padding: 30px; border-radius: 15px; border: 1px solid #3b82f6; width: 80%; max-width: 320px; margin: auto; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; background: #0f172a; color: white; box-sizing: border-box; }
-        .login-btn { width: 100%; padding: 12px; background: #3b82f6; border-radius: 8px; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 18px; }
+        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; padding: 20px; direction: rtl; }
+        .form-box { background: #1a2236; padding: 25px; border-radius: 15px; border: 1px solid #00e5ff; max-width: 400px; margin: auto; }
+        input { width: 90%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #333; background: #fff; color: #000; }
+        .login-btn { background: #00e5ff; color: #000; font-weight: bold; width: 100%; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 16px; }
     </style>
 </head>
 <body>
 
-    <div class="login-card">
-        <h2>لاگ ان 🔑</h2>
-        <input type="text" id="user" placeholder="ای میل یا یوزرنیم">
-        <input type="password" id="pass" placeholder="پاس ورڈ">
-        <button class="login-btn" onclick="startLogin()">داخل ہوں</button>
+    <h2 style="color: #00e5ff;">اپنے اکاؤنٹ میں لاگ ان کریں</h2>
+    
+    <div class="form-box">
+        <form onsubmit="window.location.href='index.html'; return false;">
+            <input type="email" placeholder="ای میل ایڈریس" required>
+            <input type="password" placeholder="پاس ورڈ" required>
+            <button type="submit" class="login-btn">لاگ ان کریں</button>
+        </form>
+        
+        <p style="margin-top: 15px;">اکاؤنٹ نہیں ہے؟ <a href="register.html" style="color: #00e5ff;">رجسٹر کریں</a></p>
     </div>
-
-    <script>
-        function startLogin() {
-            // یہ لائن آپ کو پکا ڈیش بورڈ پر لے جائے گی
-            window.location.href = "dashboard.html";
-        }
-    </script>
 
 </body>
 </html>
