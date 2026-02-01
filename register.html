@@ -2,34 +2,36 @@
 <html lang="ur">
 <head>
     <meta charset="UTF-8">
-    <title>Register - Shan Ali SMM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رجسٹر - شان پینل</title>
     <style>
-        body { font-family: Arial; background: #e9ecef; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 25px; border-radius: 8px; width: 300px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
-        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; padding: 20px; direction: rtl; }
+        .form-box { background: #1a2236; padding: 25px; border-radius: 15px; border: 1px solid #00e5ff; max-width: 400px; margin: auto; }
+        input { width: 90%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #333; background: #fff; color: #000; }
+        .reg-btn { background: #00e5ff; color: #000; font-weight: bold; width: 100%; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 16px; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h2>نیا اکاؤنٹ بنائیں</h2>
-        <input type="text" placeholder="پورا نام">
-        <input type="email" placeholder="ای میل ایڈریس">
-        <input type="password" placeholder="پاس ورڈ">
-        <a href="login.html"><button>رجسٹر کریں</button></a>
-        <p>پہلے سے اکاؤنٹ ہے؟ <a href="login.html">لاگ ان کریں</a></p>
+
+    <h2 style="color: #00e5ff;">نیا اکاؤنٹ بنائیں</h2>
+    <p>اپنا ڈیٹا بالکل صحیح لکھیں</p>
+
+    <div class="form-box">
+        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+            
+            <input type="text" name="Name" placeholder="آپ کا پورا نام" required>
+            
+            <input type="email" name="Email" placeholder="ای میل ایڈریس" required>
+            
+            <input type="tel" name="Mobile" placeholder="موبائل نمبر (03xxxxxxxxx)" required>
+            
+            <input type="password" name="Password" placeholder="پاس ورڈ بنائیں" required>
+            
+            <button type="submit" class="reg-btn">رجسٹر کریں</button>
+        </form>
+        
+        <p style="margin-top: 15px;">پہلے سے اکاؤنٹ ہے؟ <a href="login.html" style="color: #00e5ff;">لاگ ان کریں</a></p>
     </div>
+
 </body>
-</html><link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="Shan Ali SMM">
-<link rel="apple-touch-icon" href="logo.png">
-
-<script>
-  // یہ کوڈ گاہک کو ایپ انسٹال کرنے کا کہے گا
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
-
+</html>
