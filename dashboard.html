@@ -1,74 +1,35 @@
-<!DOCTYPE html>
-<html lang="ur">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ڈیش بورڈ - Shan Ali Panel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; padding-bottom: 80px; direction: rtl; }
-        .balance-card { background: linear-gradient(135deg, #00b4db, #0083b0); padding: 20px; border-radius: 15px; margin: 15px; box-shadow: 0 4px 15px rgba(0,180,219,0.3); }
-        .order-box { background: #1a2236; padding: 20px; border-radius: 15px; border: 1px solid #00e5ff; margin: 15px; text-align: right; }
-        select, input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; font-size: 16px; box-sizing: border-box; }
-        .order-btn { background: #00e5ff; color: #000; font-weight: bold; width: 100%; padding: 15px; border-radius: 10px; border: none; cursor: pointer; font-size: 18px; }
-        
-        /* نیچے والا مینو (Bottom Menu) */
-        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #1a2236; display: flex; justify-content: space-around; padding: 10px 0; border-top: 2px solid #00e5ff; }
-        .nav-item { color: white; text-decoration: none; font-size: 12px; }
-        .nav-item i { display: block; font-size: 20px; color: #00e5ff; margin-bottom: 5px; }
-    </style>
-</head>
-<body>
+<select id="service_id">
+    <option value="5341">YouTube Views (ID: 5341)</option>
+    <option value="5342">YouTube Suggested Views (ID: 5342)</option>
+    </select>
 
-    <div class="balance-card">
-        <h3>خوش آمدید، شان علی!</h3>
-        <p>Welcome, Shan Ali!</p>
-        <h2 id="balance">$0.00</h2>
-    </div>
+<input type="text" id="order_link" placeholder="لنک یہاں ڈالیں (Link)">
+<input type="number" id="order_qty" placeholder="تعداد (Quantity)">
 
-    <div class="order-box">
-        <label>سروس منتخب کریں (Select Service):</label>
-        <select id="service">
-            <option>ٹک ٹاک فالوورز (TikTok Followers) - $1.20</option>
-            <option>ٹک ٹاک لائکس (TikTok Likes) - $0.50</option>
-            <option>یوٹیوب سبسکرائبرز (YouTube Subs) - $4.00</option>
-        </select>
+<button onclick="placeRealOrder()" class="order-btn">آرڈر لگائیں (Order Now)</button>
 
-        <label>لنک پیسٹ کریں (Paste Link):</label>
-        <input type="text" id="link" placeholder="https://...">
+<script>
+function placeRealOrder() {
+    const key = "6800c815522f9b020c9b3ab0efeb8e20";
+    const service = document.getElementById('service_id').value;
+    const link = document.getElementById('order_link').value;
+    const qty = document.getElementById('order_qty').value;
 
-        <label>تعداد (Quantity):</label>
-        <input type="number" id="qty" placeholder="1000">
+    if(!link || !qty) {
+        alert("لنک اور تعداد لکھنا ضروری ہے!");
+        return;
+    }
 
-        <button class="order-btn" onclick="orderNow()">آرڈر دیں (Order Now)</button>
-    </div>
-
-    <div class="bottom-nav">
-        <a href="dashboard.html" class="nav-item">
-            <i class="fas fa-home"></i>
-            ہوم (Home)
-        </a>
-        <a href="orders.html" class="nav-item">
-            <i class="fas fa-list"></i>
-            آرڈرز (Orders)
-        </a>
-        <a href="add-funds.html" class="nav-item">
-            <i class="fas fa-wallet"></i>
-            پیمنٹ (Funds)
-        </a>
-    </div>
-
-    <script>
-        function orderNow() {
-            let link = document.getElementById('link').value;
-            let qty = document.getElementById('qty').value;
-            if(link == "" || qty == "") {
-                alert("براہ کرم تمام معلومات بھریں! (Please fill all details)");
-                return;
-            }
-            alert("آرڈر موصول ہو گیا! (Order Received)");
+    // یہ کوڈ SMMGlobe کو آرڈر بھیجے گا
+    fetch(`https://smmglobe.com/api/v2?key=${key}&action=add&service=${service}&link=${link}&quantity=${qty}`)
+    .then(res => res.json())
+    .then(data => {
+        if(data.order) {
+            alert("مبارک ہو! اصلی آرڈر لگ گیا ہے چاچو! آئی ڈی ہے: " + data.order);
+        } else {
+            alert("آرڈر نہیں لگا: " + data.error);
         }
-    </script>
-
-</body>
-</html>
+    })
+    .catch(err => alert("کچھ مسئلہ ہے، شاید نیٹ کا یا بیلنس کا!"));
+}
+</script>
