@@ -3,64 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ڈیش بورڈ - شان علی پینل</title>
+    <title>ڈیش بورڈ - Shan Ali Panel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; padding: 15px; direction: rtl; }
-        .order-box { background: #1a2236; padding: 20px; border-radius: 15px; border: 1px solid #00e5ff; max-width: 500px; margin: auto; text-align: right; }
-        select, input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; font-size: 16px; }
-        .order-btn { background: #00e5ff; color: #000; font-weight: bold; width: 100%; padding: 15px; border-radius: 10px; border: none; cursor: pointer; font-size: 18px; margin-top: 10px; }
-        .balance-card { background: linear-gradient(135deg, #00b4db, #0083b0); padding: 15px; border-radius: 15px; margin-bottom: 20px; }
+        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; padding-bottom: 80px; direction: rtl; }
+        .balance-card { background: linear-gradient(135deg, #00b4db, #0083b0); padding: 20px; border-radius: 15px; margin: 15px; box-shadow: 0 4px 15px rgba(0,180,219,0.3); }
+        .order-box { background: #1a2236; padding: 20px; border-radius: 15px; border: 1px solid #00e5ff; margin: 15px; text-align: right; }
+        select, input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; font-size: 16px; box-sizing: border-box; }
+        .order-btn { background: #00e5ff; color: #000; font-weight: bold; width: 100%; padding: 15px; border-radius: 10px; border: none; cursor: pointer; font-size: 18px; }
+        
+        /* نیچے والا مینو (Bottom Menu) */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #1a2236; display: flex; justify-content: space-around; padding: 10px 0; border-top: 2px solid #00e5ff; }
+        .nav-item { color: white; text-decoration: none; font-size: 12px; }
+        .nav-item i { display: block; font-size: 20px; color: #00e5ff; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
     <div class="balance-card">
         <h3>خوش آمدید، شان علی!</h3>
-        <p>آپ کا موجودہ بیلنس: <strong>$0.00</strong></p>
+        <p>Welcome, Shan Ali!</p>
+        <h2 id="balance">$0.00</h2>
     </div>
 
     <div class="order-box">
-        <label>سروس منتخب کریں:</label>
+        <label>سروس منتخب کریں (Select Service):</label>
         <select id="service">
-            <option>ٹک ٹاک فالوورز - $1.50</option>
-            <option>ٹک ٹاک لائکس - $0.80</option>
-            <option>یوٹیوب سبسکرائبرز - $5.00</option>
-            <option>انسٹاگرام فالوورز - $1.20</option>
+            <option>ٹک ٹاک فالوورز (TikTok Followers) - $1.20</option>
+            <option>ٹک ٹاک لائکس (TikTok Likes) - $0.50</option>
+            <option>یوٹیوب سبسکرائبرز (YouTube Subs) - $4.00</option>
         </select>
 
-        <label>لنک ڈالیں (Link):</label>
-        <input type="text" id="link" placeholder="یہاں لنک پیسٹ کریں...">
+        <label>لنک پیسٹ کریں (Paste Link):</label>
+        <input type="text" id="link" placeholder="https://...">
 
         <label>تعداد (Quantity):</label>
-        <input type="number" id="quantity" placeholder="1000">
+        <input type="number" id="qty" placeholder="1000">
 
-        <button class="order-btn" onclick="placeOrder()">آرڈر دیں</button>
+        <button class="order-btn" onclick="orderNow()">آرڈر دیں (Order Now)</button>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            ہوم (Home)
+        </a>
+        <a href="orders.html" class="nav-item">
+            <i class="fas fa-list"></i>
+            آرڈرز (Orders)
+        </a>
+        <a href="add-funds.html" class="nav-item">
+            <i class="fas fa-wallet"></i>
+            پیمنٹ (Funds)
+        </a>
     </div>
 
     <script>
-        function placeOrder() {
-            var service = document.getElementById('service').value;
-            var link = document.getElementById('link').value;
-            var qty = document.getElementById('quantity').value;
-
+        function orderNow() {
+            let link = document.getElementById('link').value;
+            let qty = document.getElementById('qty').value;
             if(link == "" || qty == "") {
-                alert("براہ کرم لنک اور تعداد لکھیں!");
+                alert("براہ کرم تمام معلومات بھریں! (Please fill all details)");
                 return;
             }
-
-            // یہ آرڈر بھی آپ کے واٹس ایپ پر آئے گا
-            var phoneNumber = "923035407529"; 
-            var message = "نیا آرڈر موصول ہوا!%0A" + 
-                          "سروس: " + service + "%0A" + 
-                          "لنک: " + link + "%0A" + 
-                          "تعداد: " + qty;
-            
-            window.open("https://wa.me/" + phoneNumber + "?text=" + message, '_blank');
+            alert("آرڈر موصول ہو گیا! (Order Received)");
         }
     </script>
-
-    <p style="margin-top: 20px;"><a href="index.html" style="color: #00e5ff; text-decoration: none;">← واپس ہوم پیج</a></p>
 
 </body>
 </html>
