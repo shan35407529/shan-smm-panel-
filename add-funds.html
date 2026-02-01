@@ -3,65 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Funds - Shan Ali SMM</title>
+    <title>پیسے جمع کریں - Add Funds</title>
     <style>
-        body { font-family: Arial; background: #0f172a; color: white; text-align: center; padding: 20px; }
-        .card { background: #1e293b; padding: 25px; border-radius: 15px; border: 2px solid #3b82f6; max-width: 400px; margin: auto; }
-        .method { background: #ffffff; color: #000; padding: 12px; border-radius: 10px; margin-bottom: 15px; font-weight: bold; text-align: left; border-left: 8px solid #f59e0b; }
-        .ai-form { background: #111827; border: 1px dashed #10b981; padding: 20px; border-radius: 10px; text-align: right; margin-top: 20px; }
-        label { font-size: 13px; color: #10b981; display: block; margin-top: 10px; }
-        input { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: none; background: #1e293b; color: white; box-sizing: border-box; }
-        .btn-verify { background: #10b981; color: white; padding: 12px; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; width: 100%; font-weight: bold; }
-        .wa-btn { background: #25d366; color: white; padding: 12px; text-decoration: none; display: block; border-radius: 8px; margin-top: 15px; font-weight: bold; }
+        body { background: #0b1120; color: white; font-family: sans-serif; text-align: center; padding: 15px; }
+        .payment-card { background: #1a2236; padding: 20px; border-radius: 15px; border: 1px solid #00e5ff; margin-bottom: 20px; text-align: right; }
+        .en { text-align: left; direction: ltr; display: block; color: #00e5ff; font-size: 14px; margin-bottom: 5px; }
+        .details { background: #0b1120; padding: 10px; border-radius: 8px; margin-top: 10px; border-left: 3px solid #00e5ff; }
+        .wa-btn { background: #25d366; color: white; padding: 12px; border-radius: 10px; text-decoration: none; display: block; margin-top: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h2>فنڈز جمع کروائیں 💰</h2>
-        
-        <div class="method" style="border-left-color: #f59e0b;">
-            <p style="color: #f59e0b; margin: 0;">Bank: Moblink Microfinance Bank</p>
-            <p style="color: #64748b; font-size: 11px; margin: 0;">(Dost App Account)</p>
-            <h3 style="margin: 5px 0;">A/C: 140414921</h3>
-            <small>نام: SHAN ALI</small>
+    <h2 style="color: #00e5ff;">پیسے جمع کرنے کا طریقہ</h2>
+    <span class="en" style="text-align:center;">How to Add Funds</span>
+
+    <div class="payment-card">
+        <span class="en">EasyPaisa / JazzCash</span>
+        <strong>طریقہ:</strong> نمبر پر پیسے بھیج کر اسکرین شاٹ واٹس ایپ کریں۔
+        <div class="details">
+            نام (Name): SHAN ALI <br>
+            نمبر (Number): 03035407529
         </div>
-
-        <div class="method" style="border-left-color: #22c55e;">
-            <p style="color: #22c55e; margin: 0;">EasyPaisa / JazzCash</p>
-            <h3 style="margin: 5px 0;">03035407529</h3>
-            <small>نام: Shan Ali Bhatti</small>
-        </div>
-
-        <div class="ai-form">
-            <h4 style="color: #10b981; margin: 0; text-align: center;">🤖 پیمنٹ رپورٹ فارم</h4>
-            
-            <label>آپ کا نمبر اور بینک کا نام:</label>
-            <input type="text" id="senderInfo" placeholder="مثلاً: 03xx - EasyPaisa">
-
-            <label>رقم (Amount in PKR):</label>
-            <input type="number" id="amount" placeholder="کتنے پیسے بھیجے؟">
-
-            <label>ٹرانزیکشن آئی ڈی (TID):</label>
-            <input type="text" id="tid" placeholder="TID نمبر لکھیں">
-
-            <button class="btn-verify" onclick="submit()">رپورٹ جمع کریں</button>
-        </div>
-
-        <a href="https://wa.me/923107199210" target="_blank" class="wa-btn">واٹس ایپ پر رابطہ کریں 💬</a>
-        <a href="dashboard.html" style="display:block; margin-top:15px; color:#94a3b8; text-decoration:none;">← واپس ڈیش بورڈ</a>
     </div>
 
-    <script>
-        function submit() {
-            var id = document.getElementById("tid").value;
-            if(id !== "") {
-                alert("شکریہ شان علی بھائی! رپورٹ موصول ہوگئی ہے۔");
-            } else {
-                alert("براہ کرم آئی ڈی لکھیں!");
-            }
-        }
-    </script>
+    <div class="payment-card">
+        <span class="en">Bank Transfer (NBP)</span>
+        <strong>بینک تفصیلات:</strong> بینک کے ذریعے رقم بھیجنے کے لیے نیچے دی گئی معلومات استعمال کریں۔
+        <div class="details">
+            Bank: National Bank of Pakistan (NBP) <br>
+            Account Name: SHAN ALI <br>
+            IBAN: PK90NBPA000000XXXXXXXXXX
+        </div>
+    </div>
+
+    <a href="https://wa.me/923035407529" class="wa-btn">
+        پیمنٹ کا اسکرین شاٹ یہاں بھیجیں <br>
+        <span style="font-size: 12px;">Send Payment Screenshot via WhatsApp</span>
+    </a>
+
+    <p><a href="dashboard.html" style="color: #ccc; text-decoration: none;">← واپس ڈیش بورڈ (Back to Dashboard)</a></p>
 
 </body>
 </html>
